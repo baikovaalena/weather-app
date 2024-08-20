@@ -15,12 +15,12 @@ function Weather() {
         console.log(city)
         try {
             const currentWeather = await getCurrentWeather(city);
-            setWeather(currentWeather); // Сохраняем полученные данные
+            setWeather(currentWeather); 
         } catch (err) {
             setWeather(null)
-            setError(err.message); // Устанавливаем сообщение об ошибке
+            setError(err.message);
         } finally {
-            setIsLoading(false); // Завершаем загрузку данных
+            setIsLoading(false);
         }
     }
 
