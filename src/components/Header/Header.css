@@ -1,17 +1,35 @@
-.header{
+.header {
     display: flex;
     background-color: rgb(77, 77, 168);
 }
 
-.header__title{
+.header__title {
     flex-grow: 1;
     margin-left: 20px;
     color: rgb(255, 255, 255);
 }
 
-.header__weather-mini{
+.header__weather-mini {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
+li {
+    list-style-type: none;
+}
+
+.header__links {
+    display: flex;
+    gap: 15px;
+    margin-right: 20px;
+    align-items: center
+}
+
+.header__navigation-link {
+    color: rgb(241, 232, 232);
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 500;
+    align-items: center;
+}

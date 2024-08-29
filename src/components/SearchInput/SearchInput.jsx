@@ -12,10 +12,16 @@ function SearchInput({ onGetCity }) {
         onGetCity(city)
         setCity('')
     }
+
+   const onKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handleCLick()
+        }
+   }
     
     return (
             <div className="container-input">
-                <input type="text" placeholder="Введите город" value={city} onChange={handleOnChange} className="container-input__input" />
+                <input type="text" placeholder="Введите город" value={city} onChange={handleOnChange} onKeyDown={onKeyDown} className="container-input__input" />
                 <button onClick={handleCLick} className="input__button-weather">Найти город</button>
             </div>
     )

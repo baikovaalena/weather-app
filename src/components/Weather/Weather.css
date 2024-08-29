@@ -40,6 +40,7 @@
     justify-content: center;
     font-weight: 700;
     color: rgb(0, 0, 0);
+    margin: 0;
 }
 
 .main-content__icon-weather {
@@ -92,3 +93,42 @@
     display: flex;
     justify-content: center;
 }
+
+.navigation-list{
+    color: rgb(241, 232, 232);
+    background-color: rgba(12, 93, 174, 0.8);
+    font-size: 16px;
+    height: 30px;
+    width: 270px;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexbox-container{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    gap: 5px;
+}
+
+
+.main-content__city-checkbox{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between
+}
+
+
+
+
+
+
+
