@@ -1,0 +1,64 @@
+.button__is-open-card {
+    color: rgb(241, 232, 232);
+    background-color: rgba(12, 93, 174, 0.8);
+    font-size: 16px;
+    height: 40px;
+    width: 150px;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.text-date{
+    font-weight: 600;
+}
+
+.container-content{
+    width: 100%;
+    padding: 0;
+}
+.text{
+    margin: 2px;
+}
+
+.wind-and-icon{
+    display: flex;
+    align-items: center;
+}
+
+.weather__card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 400px;
+    border-radius: 15px;
+    background: url('../../../../images/backgroundWeek.jpeg') no-repeat center;
+    background-size: cover;
+}
+
+.weather__temp-time{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+}
+.temp-and-icon{
+    display: flex;
+    align-items: center;
+}
+.weather__temp-time:last-child {
+    border-bottom: none;
+}
+
+.container-open-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}

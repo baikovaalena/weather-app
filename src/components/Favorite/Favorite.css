@@ -1,0 +1,65 @@
+.favorite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.favorite__city {
+    width: 100%;
+    text-align: left;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.favorite__list {
+    width: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.favorite__city-link {
+    text-align: left;
+    color: rgb(241, 232, 232);
+    background-color: rgba(12, 93, 174, 0.8);
+    font-size: 16px;
+    height: 25px;
+    width: 270px;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorite__city-button {
+    text-align: left;
+    border: 0;
+    color: rgb(241, 232, 232);
+    background-color: rgba(220, 17, 17, 0.8);
+    font-size: 16px;
+    font-weight: 500;
+    height: 35px;
+    width: 270px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorite__container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.favorite__icon{
+    width: 50px;
+    height: 50px;
+}

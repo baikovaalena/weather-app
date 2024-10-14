@@ -1,20 +1,16 @@
 import './CheckboxInput.css'
-import {useState} from "react";
 
-function CheckboxInput() {
-    const [isChecked, setIsChecked] = useState(false);
 
-    function handleCheck() {
-        setIsChecked(!isChecked);
-    }
+function CheckboxInput({onChange, checked}) {
 
     return (
-        <div className="checkbox-container">
-            {isChecked ? "Избранное" : "Добавим в избранное?"}
-            <input type="checkbox" className="checkbox-container__checkbox"
-                   onChange={handleCheck}
-                   checked={isChecked}
-            />
+        <div className="checkbox-input">
+            <label className="checkbox-container">
+                {!checked ? "Добавим в избранное?" : "Избранное"}
+                <input type="checkbox" className="checkbox-container__checkbox"
+                       checked={checked} onChange={onChange}
+                />
+            </label>
         </div>
     )
 }

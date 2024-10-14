@@ -1,8 +1,8 @@
 
 import { useParams } from "react-router-dom"
-import { getWeekWeather } from '../../../api'
+import { getWeekWeather } from '../../api'
 import { useEffect, useState } from "react"
-import WeatherWeekCard from '../WeatherCard/WeatherWeekCard'
+import WeatherWeekCard from './WeatherWeekCard/WeatherWeekCard'
 
 
 function WeatherWeek() {

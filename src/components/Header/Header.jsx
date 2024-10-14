@@ -1,14 +1,36 @@
 import './Header.css'
-import { Link } from "react-router-dom";
+import {NavLink} from "react-router-dom";
+import * as PropTypes from "prop-types";
+
+function NavLinkLink(props) {
+    return null;
+}
+
+NavLinkLink.propTypes = {
+    className: PropTypes.any,
+    to: PropTypes.string,
+    children: PropTypes.node
+};
+
 
 function Header() {
 
     return (
         <header className="header">
-            <h3 className="header__title">Прогноз погоды</h3>
+            <NavLink to="/" className="header__title">
+                <h1 className="title">Прогноз погоды</h1>
+            </NavLink>
             <nav className='header__links'>
-                <Link to="/" className="header__navigation-link">Прогноз на 1 день</Link>
-                <Link to="/favorite" className="header__navigation-link">Избранное</Link>
+                <NavLink
+                    to="/"
+                    className={({isActive}) => (isActive ? 'header__navigation-link active' : 'header__navigation-link')}>
+                    Прогноз на 1 день
+                </NavLink>
+                <NavLink
+                    to="/favorites"
+                    className={({isActive}) => (isActive ? 'header__navigation-link active' : 'header__navigation-link')}>
+                    Избранное
+                </NavLink>
             </nav>
         </header>
     )

@@ -1,11 +1,21 @@
 .checkbox-container{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 250px;
 }
 
 .checkbox-container__checkbox{
         margin: 0;
         width: 20px;
         height: 20px;
+}
+
+.checkbox-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
