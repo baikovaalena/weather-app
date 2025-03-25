@@ -5,57 +5,61 @@ import '../../../images/weatherCard.jpg'
 import {useEffect, useState} from "react";
 
 function WeatherCard({weather}) {
-    const {name, wind} = weather
-    const iconCode = weather.weather[0].icon;
-    const [isChecked, setIsChecked] = useState(false);
+  const {name, wind} = weather
+  const iconCode = weather.weather[0].icon;
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheck = () => {
+    setIsChecked(!isChecked);
 
 
-    function handleCheck() {
-        setIsChecked(!isChecked);
-        const localCities = JSON.parse(localStorage.getItem('city')) || [];
+    let localCities = JSON.parse(localStorage.getItem('city')) || [];
 
-        if (!isChecked) {
-            if (!localCities.includes(name)) {
-                localCities.push(name);
-                localStorage.setItem('city', JSON.stringify(localCities));
-            }
-        } else{
-            const deleteCities = localCities.filter(item => item !== name);
-            localStorage.setItem('city', JSON.stringify(deleteCities));
-        }
+    if (!Array.isArray(localCities)) {
+      localCities = [];
     }
 
-    useEffect(() => {
-        if (JSON.parse(localStorage.getItem('city')).includes(name)) {
-            setIsChecked(true);
-        }else {
-            setIsChecked(false);
-        }
-    }, [name]);
+    if (!isChecked) {
+      if (!localCities.includes(name)) {
+        const updatedCities = [...localCities, name];
+        localStorage.setItem('city', JSON.stringify(updatedCities));
+      }
+    } else {
+      const updatedCities = localCities.filter(item => item !== name);
+      localStorage.setItem('city', JSON.stringify(updatedCities));
+    }
+  }
 
-    return (
-        <>
-            <div className='main-content'>
-                <div className='main-content__counter-weather'>
-                    <div className="main-content__content-weather">
-                        <div className="main-content__city-checkbox">
-                            <p className="main-content__city"> {name} </p>
-                        </div>
-                        <p className="main-content__temp">
-                            {`Температура сейчас: ${Math.floor(weather.main.temp - 273.15)} °C`}
-                            <img src={`https://openweathermap.org/img/wn/${iconCode}@2x.png`} alt="weather"
-                                 className="main-content__icon-weather"/>
-                        </p>
-                        <p className="main-content__wind">
-                            {`Скорость ветра: ${wind.speed} км/ч`}
-                            <img src={iconWind} alt="" className="main-content__icon-wind"/>
-                        </p>
-                    </div>
-                </div>
+  useEffect(() => {
+    const savedCities = JSON.parse(localStorage.getItem('city')) || [];
+    if (Array.isArray(savedCities)) {
+      setIsChecked(savedCities.includes(name));
+    }
+  }, [name]);
+
+  return (
+    <>
+      <div className='main-content'>
+        <div className='main-content__counter-weather'>
+          <div className="main-content__content-weather">
+            <div className="main-content__city-checkbox">
+              <p className="main-content__city"> {name} </p>
             </div>
-            <CheckboxInput onChange={handleCheck} checked={isChecked}/>
-        </>
-    )
+            <p className="main-content__temp">
+              {`Температура сейчас: ${Math.floor(weather.main.temp - 273.15)} °C`}
+              <img src={`https://openweathermap.org/img/wn/${iconCode}@2x.png`} alt="weather"
+                   className="main-content__icon-weather"/>
+            </p>
+            <p className="main-content__wind">
+              {`Скорость ветра: ${wind.speed} км/ч`}
+              <img src={iconWind} alt="" className="main-content__icon-wind"/>
+            </p>
+          </div>
+        </div>
+      </div>
+      <CheckboxInput onChange={handleCheck} checked={isChecked}/>
+    </>
+  )
 }
 
 export default WeatherCard
