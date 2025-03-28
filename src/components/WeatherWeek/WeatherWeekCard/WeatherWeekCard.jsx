@@ -23,7 +23,7 @@ function WeatherWeekCard({weather}) {
 
   return (
     <>
-      <h1>Погода на 5 дней: {weather.city.name}</h1>
+      <h1 className='weather__week-title'>Погода на 5 дней: {weather.city.name}</h1>
 
       <div className='weather__week-card'>
         <ul className='container'>

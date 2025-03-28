@@ -16,7 +16,7 @@ function Favorites() {
         <div className="favorite">
             <h1 className="favorite__title"> Избранное </h1>
             <ul className="favorite__list">
-                {favoritesCities.map(city => {
+                {favoritesCities?.map(city => {
                     const FavoriteIcon = iconCity;
 
                     return (
